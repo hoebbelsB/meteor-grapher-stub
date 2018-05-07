@@ -1,0 +1,21 @@
+<head>
+    <title>meteor-grapher-demo</title>
+</head>
+
+<body>
+{{> invoice}}
+</body>
+
+<template name="invoice">
+    <h2>{{invoice.name}}</h2>
+    <ul>
+        {{#each invoice.invoiceLineItems}}
+            {{>lineItem}}
+        {{/each}}
+    </ul>
+    <p>Total: {{invoice.grosssum}}</p>
+</template>
+
+<template name="lineItem">
+    <li><a href="" data-id="{{_id}}">{{number}} - {{name}} - {{grosspriceTotal}}</a></li>
+</template>
